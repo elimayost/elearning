@@ -6,13 +6,15 @@
       <li>
         <% if session[:current_user] %>
           <class style="color: #09c; font-weight: bold;"><%= "Logged in: #{session[:current_user].first.name}" %></class>
-          <li><%= link_to 'Sign out', signout_path %></li>
+          <li><%= link_to '(Sign out)', signout_path %></li>
       <% else %>
-        <%= link_to 'Sign in', signin_path %>
+        <class id="login"><%= link_to_function 'Sign in' %></class>
       <% end %>
       </li>
       <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "About us", about_path %></li>
       <li><%= link_to "FAQ", faq_path %></li>
+      <li><%= link_to "Contact us", contact_path %></li>
     </ul>
   </nav>
 </header>
