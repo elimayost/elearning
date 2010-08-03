@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   # GET /products
   # GET /products.xml
   def index
@@ -81,3 +82,4 @@ class ProductsController < ApplicationController
     end
   end
 end
+

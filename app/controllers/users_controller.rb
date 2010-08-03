@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+	["openssl", "digest/sha1"].each { |r| require r }
+
+  before_filter :logged_in?, :except => [:signin, :login, :signout, :logout]
+
   # GET /users
   # GET /users.xml
   def index
@@ -80,4 +85,28 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def login
+    @user = User.where("email = ?", params[:email])
+
+    unless @user.empty?
+      if @user.first.password == Digest::SHA1.hexdigest("#{params[:password]}--#{@user.first.salt}")
+        session[:current_user] = @user
+        redirect_to root_path
+      else
+        flash[:login_error] = "Wrong login details, try again"
+        redirect_to signin_path
+      end
+    else
+      flash[:login_error] = "User not found, try again"
+      redirect_to signin_path
+    end
+  end
+
+  def logout
+    session[:current_user] = nil
+    redirect_to root_path
+  end
+
 end
+

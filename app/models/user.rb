@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 	["openssl", "digest/sha1"].each { |r| require r }
 
 	has_many :codes
-	
+
 	before_create :secure_password
 
 	validates :name, :presence => true
@@ -19,3 +19,4 @@ class User < ActiveRecord::Base
 	end
 
 end
+

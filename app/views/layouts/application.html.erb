@@ -2,13 +2,16 @@
 <html>
 <head>
   <title>Elearning</title>
-  <%= stylesheet_link_tag :all %>
+  <%= render 'layouts/stylesheets' %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+<div class="container">
+  <%= render 'layouts/header' %>
+  <p id="notice"><%= notice %></p>
+  <%= yield %>
+</div>
 </body>
 </html>
+

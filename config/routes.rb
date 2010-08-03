@@ -1,6 +1,21 @@
 Elearning::Application.routes.draw do |map|
-  resources :products
 
+  root :to => "pages#home"
+  match 'about', :to => "pages#about"
+  match 'contact', :to => "pages#contact"
+  match 'faq', :to => "pages#faq"
+  match '/logout', :to => "users#logout"
+  match '/login', :to => "users#login"
+  match '/signin', :to => "users#signin"
+  match '/signout', :to => "users#logout"
+
+  get "pages/home"
+  get "pages/contact"
+  get "pages/about"
+  get "pages/faq"
+
+
+  resources :products
   resources :users
 
   # The priority is based upon order of creation:
@@ -60,3 +75,4 @@ Elearning::Application.routes.draw do |map|
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 end
+

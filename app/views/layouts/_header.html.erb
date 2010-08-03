@@ -1,0 +1,19 @@
+<header>
+  <% logo = image_tag "logo.png", :alt => "Elearning App", :class => "round" %>
+  <%= link_to logo, root_path %>
+  <nav class="round">
+    <ul>
+      <li>
+        <% if session[:current_user] %>
+          <class style="color: #09c; font-weight: bold;"><%= "Logged in: #{session[:current_user].first.name}" %></class>
+          <li><%= link_to 'Sign out', signout_path %></li>
+      <% else %>
+        <%= link_to 'Sign in', signin_path %>
+      <% end %>
+      </li>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "FAQ", faq_path %></li>
+    </ul>
+  </nav>
+</header>
+
