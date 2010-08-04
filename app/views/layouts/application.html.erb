@@ -3,7 +3,10 @@
 <head>
   <title>Elearning</title>
   <%= render 'layouts/stylesheets' %>
-  <%= javascript_include_tag 'jquery', 'jquery_ui', 'application', :defaults %>
+  <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js',
+                             'jquery_ui',
+                             'application',
+                             :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>

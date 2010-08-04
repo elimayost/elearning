@@ -47,7 +47,6 @@ nav {
 nav {
   background-color: white;
   padding: 0 0.7em;
-  margin-right: 10px;
   white-space: nowrap;
 }
 
@@ -78,9 +77,7 @@ nav ul li a:hover {
 /* Login */
 
 login {
-  float: right;
   background-color: white;
-  padding: 0 0.7em;
   white-space: nowrap;
   font-weight: bold;
   padding: 10px 10px 10px 10px;
@@ -98,6 +95,21 @@ login {
     -moz-border-radius:    5px;
     -webkit-border-radius: 5px;
     border-radius:         5px;
+}
+
+login_page {
+  background-color: white;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.login_page_error {
+    background-color: red;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+    -moz-border-radius:    10px;
+    -webkit-border-radius: 10px;
+    border-radius:         10px;
 }
 
 /* Sign up button */

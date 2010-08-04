@@ -1,0 +1,12 @@
+<%= form_tag login_path do %>
+  <div class="field">
+    email <class id="username" style="margin-left: 24px;"><%= text_field_tag :email %></class>
+  </div>
+  <div class="field">
+    password <password><%= password_field_tag :password %></password>
+  </div>
+  <div class="actions">
+    <class style="margin-left: 170px;"><%= submit_tag 'Sign in' %></class>
+  </div>
+<% end %>
+

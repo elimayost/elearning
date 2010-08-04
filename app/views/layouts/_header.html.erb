@@ -6,9 +6,10 @@
       <li>
         <% if session[:current_user] %>
           <class style="color: #09c; font-weight: bold;"><%= "Logged in: #{session[:current_user].first.name}" %></class>
-          <li><%= link_to '(Sign out)', signout_path %></li>
+          <li><%= link_to '(Sign out)', logout_path %></li>
       <% else %>
-        <class id="login"><%= link_to_function 'Sign in' %></class>
+        <div id="login-button"><%= link_to_function 'Sign in' %></div>
+        <div id="login" style="display: none;"><%= render 'layouts/login' %></div>
       <% end %>
       </li>
       <li><%= link_to "Home", root_path %></li>

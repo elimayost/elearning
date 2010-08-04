@@ -1,8 +1,9 @@
 
-<login>
-<% if flash[:login_error] %><div class="login-error"><%= flash[:login_error] %></div><% end %>
+<login_page>
+<% if flash[:login_error] %><div class="login_page_error"><%= flash[:login_error] %></div><% end %>
 <%= form_tag login_path do %>
   <div class="field">
+    Enter your login details:<br /><br />
     email: <br
     <%= text_field_tag :email %>
   </div>
@@ -14,5 +15,5 @@
     <%= submit_tag 'Sign in' %>
   </div>
 <% end %>
-</login>
+</login_page>
 
