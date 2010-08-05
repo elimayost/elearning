@@ -1,6 +1,9 @@
 class Code < ActiveRecord::Base
 
 	["openssl", "digest/sha1"].each { |r| require r }
+
+	belongs_to :product
+	belongs_to :user
 	
 	before_create :generate_code
 

@@ -1,6 +1,9 @@
 Elearning::Application.routes.draw do |map|
 
   root :to => "pages#home"
+  match 'buy', :to => "pages#buy"
+	match 'shop', :to => "pages#shop"
+	match 'my_account', :to => "pages#account"
   match 'about', :to => "pages#about"
   match 'contact', :to => "pages#contact"
   match 'faq', :to => "pages#faq"
@@ -8,7 +11,6 @@ Elearning::Application.routes.draw do |map|
   match '/login', :to => "users#login"
   match '/signin', :to => "users#signin"
   match '/signout', :to => "users#logout"
-
   get "pages/home"
   get "pages/contact"
   get "pages/about"

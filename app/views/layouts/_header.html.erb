@@ -12,10 +12,11 @@
         <div id="login" style="display: none;"><%= render 'layouts/login' %></div>
       <% end %>
       </li>
+      <% if logged_in? %><li><%= link_to 'My account', my_account_path %></li><% end %>
       <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "About us", about_path %></li>
-      <li><%= link_to "FAQ", faq_path %></li>
-      <li><%= link_to "Contact us", contact_path %></li>
+			<li><%= link_to "About us", about_path %></li>
+			<li><%= link_to "FAQ", faq_path %></li>
+			<li><%= link_to "Contact us", contact_path %></li>
     </ul>
   </nav>
 </header>

@@ -1,0 +1,11 @@
+
+<h4> Purchases: </h4>
+
+<% unless @codes.empty? %>
+	<ul>
+		<% @codes.each do |code| %>
+			<li><%= code %></li>
+		<% end %>
+	</ul>	
+<% end %>
+

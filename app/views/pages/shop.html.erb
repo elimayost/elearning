@@ -1,0 +1,7 @@
+
+<% unless @products.empty? %>
+	<h4>Products: </h4>
+	<% @products.each do |product| %>
+		<%= link_to product.name, buy_path, :id => product.id %><br />
+	<% end %>
+<% end %>

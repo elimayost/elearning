@@ -16,6 +16,7 @@ header img {
 }
 
 section {
+	clear: both;
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
@@ -36,6 +37,12 @@ a:hover {
 
 a:visited {
   color: #069;
+}
+
+/* Logo */
+
+logo {
+	padding-bottom: 5px;
 }
 
 /* Navigation */
@@ -71,6 +78,43 @@ nav ul li a:visited {
 }
 
 nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Menu */
+
+menu {
+  float: left;
+}
+
+menu {
+	clear: both;
+  background-color: white;
+  padding: 0 0.7em;
+  white-space: nowrap;
+}
+
+menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+menu ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+menu ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+menu ul li a:visited {
+  color: #09c;
+}
+
+menu ul li a:hover {
   text-decoration: underline;
 }
 
