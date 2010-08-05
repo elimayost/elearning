@@ -4,4 +4,9 @@ module ApplicationHelper
 		true if session[:current_user]
 	end
 
+  def time_to_gmt time
+    time + 1.hour
+  end
+
 end
+
