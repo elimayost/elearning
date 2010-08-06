@@ -15,7 +15,8 @@
 			width: 507,
 			modal: true,
 			draggable: false,
-			open: function(event, ui) { jQuery(".ui-dialog-titlebar-close").hide(); }
+			close: function() { window.location.replace('/my_account'); },
+			open: function() { jQuery(".ui-dialog-titlebar-close").hide(); }
     });
   });
 </script>
