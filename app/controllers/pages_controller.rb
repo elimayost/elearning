@@ -28,9 +28,10 @@ class PagesController < ApplicationController
 											 		:product_id => params[:id],
 											 		:expires_at => Time.now + 24.hours
 											)
-			redirect_to root_path
+			redirect_to my_account_path
 		else
-      redirect_to signin_path, :notice => "Please login first"
+		  flash[:login_error] = "Please login first"
+      redirect_to signin_path
 		end
 	end
 

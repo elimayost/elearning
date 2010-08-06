@@ -1,9 +1,30 @@
 
-<player>
+<script>
+  jQuery(function() {
+
+    jQuery(document).click(function(){
+      jQuery('#player').dialog("close");
+    });
+
+    jQuery('#player').dialog({
+      title: 'Lesson player: (press Esc key to close)',
+			resizable: false,
+			autoOpen: true,
+			show: 'blind',
+			height: 430,
+			width: 507,
+			modal: true,
+			draggable: false,
+			open: function(event, ui) { jQuery(".ui-dialog-titlebar-close").hide(); }
+    });
+  });
+</script>
+
+<div id="player">
   <object width="480" height="385"><param name="movie" value="<%= @product.download_url %>&amp;hl=en_GB&amp;fs=1"></param>
     <param name="allowFullScreen" value="true"></param>
     <param name="allowscriptaccess" value="always"></param>
-    <embed src="<%= @product.download_url %>&amp;hl=en_GB&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed>
+    <embed src="<%= @product.download_url %>&amp;hl=en_GB&amp;fs=1?color1=0x006699&amp;color2=0x54abd6&amp;border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed>
   </object>
-</player>
+</div>
 

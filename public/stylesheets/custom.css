@@ -203,7 +203,7 @@ footer copyright {
 
 /* Player */
 
-player {
-  margin-left: 215px;
+#player {
+  display: none;
 }
 

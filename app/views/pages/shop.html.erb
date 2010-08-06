@@ -2,7 +2,7 @@
 <% unless @products.empty? %>
 	<h4>Products: </h4>
 	<% @products.each do |product| %>
-		<%= link_to product.name, buy_url(:id => product.id) %><br />
+		<%= product.name %> | <%= link_to 'Buy', buy_url(:id => product.id) %><br />
 	<% end %>
 <% end %>
 
