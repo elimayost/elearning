@@ -15,7 +15,7 @@ class PagesController < ApplicationController
   end
 
 	def account
-		@codes = User.where("id = ?", session[:current_user].first.id).first.codes
+		@codes = User.where("id = ?", session[:current_user].first.id).first.codes.not_expired
 	end
 
 	def shop
@@ -30,7 +30,7 @@ class PagesController < ApplicationController
 											)
 			redirect_to root_path
 		else
-      redirect_to root_path
+      redirect_to signin_path, :notice => "Please login first"
 		end
 	end
 
@@ -38,10 +38,6 @@ class PagesController < ApplicationController
 	  @code = Code.where("id = ?", params[:id]).first
 	  if Time.now < @code.expires_at + 1.hour
 	    @product = Product.where("id = ?", @code.product.id).first
-
-	    respond_to do |format|
-	      format.js
-	    end
 	  else
 	    redirect_to my_account_path
 	  end

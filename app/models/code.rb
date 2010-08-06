@@ -4,12 +4,16 @@ class Code < ActiveRecord::Base
 
 	belongs_to :product
 	belongs_to :user
-	
+
 	before_create :generate_code
 
 	validates :product_id, :presence => true
 	validates :user_id, :presence => true
 	validates :expires_at, :presence => true
+
+  def self.not_expired
+    where("expires_at > ?", Time.now)
+  end
 
 	protected
 	def generate_code
@@ -17,3 +21,4 @@ class Code < ActiveRecord::Base
 	end
 
 end
+

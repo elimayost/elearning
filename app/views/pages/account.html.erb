@@ -7,8 +7,7 @@
 			<li><%= "#{code.product.name}" %> -
 			    (<%= time_to_gmt(code.expires_at).strftime("expires: %a %d/%m/%y at %H:%M") %>) -
 			    <% unless download_expired? code.expires_at %>
-			      <div id="watch_link"><%= link_to 'Watch lesson', '#'%></div>
-			      <div id="watch_product" style="display: none"><%= code.product.name %></div>
+            <%= link_to 'Watch lesson', watch_path(:id => code.id) %>
 			    <% end %>
 			</li>
 		<% end %>

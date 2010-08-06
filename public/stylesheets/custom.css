@@ -88,7 +88,7 @@ menu {
 }
 
 menu {
-	clear: both;
+  clear: both;
   background-color: white;
   padding: 0 0.7em;
   white-space: nowrap;
@@ -199,5 +199,11 @@ footer copyright {
   margin-left: 10px;
   font-weight: bold;
   color: #09c;
+}
+
+/* Player */
+
+player {
+  margin-left: 215px;
 }
 
